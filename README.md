@@ -1,13 +1,15 @@
+```
 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *   mpg123 - MPEG 1.0/2.0/2.5 audio player            *
 *   README for version 1.x.y, dated at 14.06.2009     *
 *                                                     *
 * ...still the fastest MPEG audio player for UNIX ;)  *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+```
 (This file has very long lines - die-hard terminal nostalgists can be satisfied by `fmt -s -w 75 < README | less`. I think it's better to let the reader's preference rule than to preformat the stuff to some arbitrary width.)
 
 
-0. Stuff
+## 0. Stuff
 
 For building/installation info see INSTALL.
 
@@ -29,7 +31,7 @@ for sourceforge.net based services like download mirrors, mailing lists and bug/
 Please use the sourceforge download mirrors when possible to minimize load on the mpg123.org server.
 
 
-1. Introduction
+## 1. Introduction
 
 This is a console based decoder/player for mono/stereo mpeg audio files, probably more familiar as MP3 or MP2 files.
 It's focus is speed. We still need some low-end benchmarks for the current version, but playback should be possible even on i486 CPUs. There is hand-optimized assembly code for i586, MMX, 3DNow, SEE and 3DNowExt instructions, while generic code runs on a variety of different platforms and CPUs.
@@ -38,7 +40,7 @@ Most tested are Linux on x86 and Alpha/AXP and MacOSX on ppc as the environments
 We are always thankful for user reports on success (and failure) on any platform!
 
 
-2. Contact
+## 2. Contact
 
 short:
 
@@ -50,11 +52,11 @@ or
 long: see doc/CONTACT
 
 
-3. Interface/Usage
+## 3. Interface/Usage
 
 Please consult the manpage mpg123(1). Some starter info follows.
 
-3.1 Simple Console Usage
+### 3.1 Simple Console Usage
 
 Mpg123 is a console program - normally it just plays a list of files you specify on command line and that's it. See the included manpage or
 
@@ -70,7 +72,7 @@ In the simple "mpg123 file1.mp3 file2.mp3" mode, the only thing you can do to in
 
 Note that this Ctrl+C behaviour is special to this mode; when any of the following is activated, Ctrl+C will just kill the program like you would expect normally (this changed from earlier versions).
 
-3.2 Advanced Console Usage
+### 3.2 Advanced Console Usage
 
 You can specify the option -C to enable a terminal control interface enabling to influence playback on current title/playlist by pressing some key:
 
@@ -103,7 +105,7 @@ Note: This interface needs not to be available on _every_ platform/build.
 Another note: The volume up and down is performed by changing the scale factor (like the -f parameter) ... so the audio is scaled digitally in the given range of the output format (usually 16bits). That means the lowering the volume will decrease the dynamic range and possibly lessen the quality while increasing volume can in fact increase the dynamic range and thus make it better, if you deal with a silent source and no clipping is necessary.
 It is a good idea to use RVA values stored in the file for adjusting low volume files, though - mpg123 handles that in addition to your volume setting.
 
-3.3 Control Interface for Frontends
+### 3.3 Control Interface for Frontends
 
 There used to be several interfaces for frontends left over from that past, but only one of them remains for the present and future:
 
@@ -114,7 +116,7 @@ It contains of communication of textual messages via standard input to mpg123 an
 See doc/README.remote for usage.
 
 
-4. Speed
+## 4. Speed
 
 mpg123 is fast. Any faster software player is probably based on some hacked mpg123;-)
 MPlayer included mpg123 source code in it's mp3lib and we have to be thankful for the MPlayer folks adding SSE, 3DNowExt and AltiVec optimizations over the years, which we were able to backport.
@@ -127,7 +129,7 @@ Decoding a certain album (Queensryche's Rage for Order) to /dev/null took 22.4s 
 
 Also, beginning with mpg123 1.8.0, there are fresh x86-64 SSE optimizations (provided by Taihei Monma) which make mpg123 the fastest MPEG audio decoder in my knowledge also on current 64bit x86 systems.
 
-5. Accuracy
+## 5. Accuracy
 
 The mpg123 engine is able to decode in full compliance to ISO/IEC 11172-3, for all three layers, using floating point or integer math (the latter since 1.8.1).
 Accuracy of 16bit output depends on specific optimization in use and compile-time choice about the rounding mode (which is performance relevant).
@@ -140,7 +142,7 @@ Dithered 16bit output is available as an option (the --cpu choices ending with _
 
 on the whereabouts.
 
-6. History
+## 6. History
 
 A looooong time ago (mid-90s), Michael Hipp wrote some initial mpg123 and made it _the_ Unix console mp3 player in the following years.
 The exact date of birth is fuzzy in human memory, but according to the master himself (Michael) mpg123 started in 1994 as an MP2 player which a year later, 1995, gained MP3 ability.
@@ -196,7 +198,7 @@ A lot of emails and some weeks later there was the two-developer team of Nichola
 
 And there we are now...
 
-7. End
+## 7. End
 
 Have fun!
 ____________
